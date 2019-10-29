@@ -1,0 +1,22 @@
+%%
+clc
+A = [0, 1, 0; 
+    2*9.8, 0, -6.26;
+    0, 0, -3];
+
+B = [0; 0; 1];
+
+C = [1, 0, 0];
+
+D = 0;
+
+eig(A)
+
+%%
+[numerator, denominator] = ss2tf(A, B, C, D);
+
+G = tf(numerator, denominator)
+
+zpk(G)
+
+%%
